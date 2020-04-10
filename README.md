@@ -1,16 +1,21 @@
 # officeAir - Temp and Humidity Meter and Google Sheet Logger with Raspberry Pi and I2C sensors
 
 ## enabling I2C interface 
-1. `sudo raspi-config` 
+1. `sudo raspi-config`
+
+![raspi-config](https://github.com/DecentLabs/officeAir/blob/master/1_raspi-config_intef_options.png)
+
+![Interface Options](https://github.com/DecentLabs/officeAir/blob/master/2_raspi-config_intef_options_i2c.png)
+
+![enable I2C](https://github.com/DecentLabs/officeAir/blob/master/2_raspi-config_intef_options_i2c.png)
+
 2. `sudo apt install i2c-tools`
 
 ## veryfication of I2C sensor:
 3. `sudo i2cdump -y 1 64`
 #should look like somthing like this:
+![I2C map](https://github.com/DecentLabs/officeAir/blob/master/4_i2cdump_map.png)
 
-#...
-#e0: 00 00 00 69 00 48 00 3a 00 00 00 00 00 00 7f 00 ...i.H.:......?.
-#f0: 00 00 00 XX XX XX XX XX XX XX XX XX XX XX XX XX ...XXXXXXXXXXXXX
 
 ## creating log script to execute I2C sensor call and google web app data upload:
 ```#/bins/sh
