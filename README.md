@@ -25,7 +25,7 @@
     DATA=`sht21.py`
     curl -L "https://script.google.com/macros/s/__Google script deployed web app key here__/exec?$DATA"
 
-#set rights
+### set rights
     `sudo chmod +x log`
     
  ## copy the python script into the proper folder:
@@ -36,7 +36,7 @@
 ## modifying crontab to execute the script every minuite
     sudo nano /etc/crontab
 
-#and copy paste to the last line this:
+### and copy paste to the last line this:
 
     *  *    * * *   root  /usr/local/bin/log #log air quality
     
