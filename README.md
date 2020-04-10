@@ -1,6 +1,6 @@
 # officeAir - Temp and Humidity Meter and Google Sheet Logger with Raspberry Pi and I2C sensors
 
-## enabling I2C interface 
+## enabling I2C interface at Raspberry Pi
 1. `sudo raspi-config`
 
 ![raspi-config](https://github.com/DecentLabs/officeAir/blob/master/1_raspi-config_intef_options.png)
@@ -26,7 +26,7 @@
     curl -L "https://script.google.com/macros/s/__Google script deployed web app key here__/exec?$DATA"
 
 ### set rights
-    `sudo chmod +x log`
+    sudo chmod +x log
     
  ## copy the python script into the proper folder:
     cd /usr/local/bin/log
