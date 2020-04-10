@@ -7,6 +7,7 @@
 #veryfication of I2C sensor:
 3. sudo i2cdump -y 1 64
 #should look like somthing like this:
+
 #...
 #e0: 00 00 00 69 00 48 00 3a 00 00 00 00 00 00 7f 00    ...i.H.:......?.
 #f0: 00 00 00 XX XX XX XX XX XX XX XX XX XX XX XX XX    ...XXXXXXXXXXXXX
