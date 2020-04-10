@@ -18,12 +18,17 @@
 
 
 ## creating log script to execute I2C sensor call and google web app data upload:
+    sudo nano log
+    
+    #copy paste this into:
     #/bins/sh
     DATA=`sht21.py`
     curl -L "https://script.google.com/macros/s/__Google script deployed web app key here__/exec?$DATA"
 
-
+#set rights
+    `sudo chmod +x`
 
 ## modifying crontab to execute the script every minuite
     sudo nano /etc/crontab
+and copy paste to the last line this:
     *  *    * * *   root  /usr/local/bin/log #log air quality
