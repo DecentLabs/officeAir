@@ -30,5 +30,7 @@
 
 ## modifying crontab to execute the script every minuite
     sudo nano /etc/crontab
-and copy paste to the last line this:
+
+#and copy paste to the last line this:
+
     *  *    * * *   root  /usr/local/bin/log #log air quality
