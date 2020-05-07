@@ -42,7 +42,7 @@
     
 ## You can take this example Google sheet (copy it to yourself and format for your needs)
 
-
+![example chart](https://github.com/DecentLabs/officeAir/blob/master/example/5_balcony_temp_hum_chart.png)
     
     https://docs.google.com/spreadsheets/d/1NwUGx-ZrcANtIkeNKTUgpd7Sba6uL-PD1U4rKH_r9Pc/edit?usp=sharing
 
