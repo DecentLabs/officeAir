@@ -27,8 +27,9 @@ Let's see how to configure RPi and google sheet scripts and web app deploy to en
 
 After the google sheet configuration now see what configuration we need to do under the hood of Raspberry Pi:
 
-## First enabling I2C interface at Raspberry Pi
-### 4. `sudo raspi-config`
+## 4. enable I2C interface at Raspberry Pi
+ 
+       `sudo raspi-config`
 
 ![raspi-config](https://github.com/DecentLabs/officeAir/blob/master/example/1_raspi-config_intef_options.png)
 
@@ -36,15 +37,17 @@ After the google sheet configuration now see what configuration we need to do un
 
 ![enable I2C](https://github.com/DecentLabs/officeAir/blob/master/example/2_raspi-config_intef_options_i2c.png)
 
-### 4b. Connect the sensor to the RaspberryPi's corresponding pins as shown below:
+### 4b. connect the sensor to the RaspberryPi's corresponding pins as shown below:
 ![wiring](https://github.com/DecentLabs/officeAir/blob/master/example/6_sensor_wiring1.png)
 ![wiring](https://github.com/DecentLabs/officeAir/blob/master/example/6_sensor_wiring2.png)
 ![wiring](https://github.com/DecentLabs/officeAir/blob/master/example/6_sensor_wiring3.png)
 
-### 5. `sudo apt install i2c-tools`
+### 5. install i2c-tools to be able to reach the sensor and check its status
+       `sudo apt install i2c-tools`
 
-## veryfication of I2C sensor:
-### 6. `sudo i2cdump -y 1 64`
+### 6. veryfication of I2C sensor:
+       `sudo i2cdump -y 1 64`
+       
 #should look like somthing like this:
 ![I2C map](https://github.com/DecentLabs/officeAir/blob/master/example/4_i2cdump_map.png)
 
