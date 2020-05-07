@@ -40,6 +40,11 @@
 
     *  *    * * *   root  /usr/local/bin/log #log air quality
     
+## You can take this example Google sheet (copy it to yourself and format for your needs)
+
+
+    
+    https://docs.google.com/spreadsheets/d/1NwUGx-ZrcANtIkeNKTUgpd7Sba6uL-PD1U4rKH_r9Pc/edit?usp=sharing
 
     
     
