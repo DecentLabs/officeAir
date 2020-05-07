@@ -1,6 +1,9 @@
 # officeAir - Temp and Humidity Meter and Google Sheet Logger with Raspberry Pi and I2C sensors
 
+This is how its looks like once collected in google sheet:
 ![example chart](https://github.com/DecentLabs/officeAir/blob/master/example/5_balcony_temp_hum_chart.png)
+
+Let's see how to configure RPi and google sheet scripts and web app deploy to enable this "data flow gateway".
 
 ## enabling I2C interface at Raspberry Pi
 1. `sudo raspi-config`
