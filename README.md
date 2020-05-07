@@ -1,5 +1,7 @@
 # officeAir - Temp and Humidity Meter and Google Sheet Logger with Raspberry Pi and I2C sensors
 
+This project lets you log temperature and humidity data via Raspberry Pi and a sensor easily and automated way into you google sheet, collecting the raw data and automatically drawing a nice chart as data coming in.
+
 First lets see the Google sheet and its script side to prepare that before Raspberry pi configurations.
 
 ### You can take this example Google sheet (make a copy to yourself and format for your needs):
