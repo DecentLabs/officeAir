@@ -3,18 +3,18 @@
 ## enabling I2C interface at Raspberry Pi
 1. `sudo raspi-config`
 
-![raspi-config](https://github.com/DecentLabs/officeAir/blob/master/1_raspi-config_intef_options.png)
+![raspi-config](https://github.com/DecentLabs/officeAir/blob/master/example/1_raspi-config_intef_options.png)
 
-![Interface Options](https://github.com/DecentLabs/officeAir/blob/master/2_raspi-config_intef_options_i2c.png)
+![Interface Options](https://github.com/DecentLabs/officeAir/blob/master/example/2_raspi-config_intef_options_i2c.png)
 
-![enable I2C](https://github.com/DecentLabs/officeAir/blob/master/2_raspi-config_intef_options_i2c.png)
+![enable I2C](https://github.com/DecentLabs/officeAir/blob/master/example/2_raspi-config_intef_options_i2c.png)
 
 2. `sudo apt install i2c-tools`
 
 ## veryfication of I2C sensor:
 3. `sudo i2cdump -y 1 64`
 #should look like somthing like this:
-![I2C map](https://github.com/DecentLabs/officeAir/blob/master/4_i2cdump_map.png)
+![I2C map](https://github.com/DecentLabs/officeAir/blob/master/example/4_i2cdump_map.png)
 
 
 ## creating log script to execute I2C sensor call and google web app data upload:
