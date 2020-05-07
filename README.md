@@ -4,10 +4,16 @@ First lets see the Google sheet and its script side to prepare that before Raspb
 
 ## You can take this example Google sheet (make a copy to yourself and format for your needs)
 
+[example google sheet](https://docs.google.com/spreadsheets/d/1NwUGx-ZrcANtIkeNKTUgpd7Sba6uL-PD1U4rKH_r9Pc/edit?usp=sharing)
+
+Here is a chart for temperature and humidity for several days:
+
 ![example chart](https://github.com/DecentLabs/officeAir/blob/master/example/5_balcony_temp_hum_chart.png)
+
+And this is how the raw data looks like:
+
 ![example raw data](https://github.com/DecentLabs/officeAir/blob/master/example/5_balcony_temp_hum_chart_2.png)
-    
-    https://docs.google.com/spreadsheets/d/1NwUGx-ZrcANtIkeNKTUgpd7Sba6uL-PD1U4rKH_r9Pc/edit?usp=sharing
+       
 
 Let's see how to configure RPi and google sheet scripts and web app deploy to enable this "data flow gateway".
 
