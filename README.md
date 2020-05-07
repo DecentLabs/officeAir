@@ -2,9 +2,7 @@
 
 This project lets you log temperature and humidity data via Raspberry Pi and a sensor easily and automated way into you google sheet, collecting the raw data and automatically drawing a nice chart as data coming in. (The name and use case comes from life: initially we set this up to monitor DecentLabs office climate in a hot summer period, when air conditioning had some weakness.)
 
-Code by: Róbert Szalóki
-Hardware configuration and manual by: Zoltan Dóczi
-Licensed by DecentLabs
+Code by: Róbert Szalóki, Hardware configuration and manual by: Zoltan Dóczi, Licensed by DecentLabs
 
 First lets see the Google sheet and its script side to prepare that before Raspberry pi configurations.
 
