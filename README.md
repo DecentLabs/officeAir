@@ -36,6 +36,11 @@ After the google sheet configuration now see what configuration we need to do un
 
 ![enable I2C](https://github.com/DecentLabs/officeAir/blob/master/example/2_raspi-config_intef_options_i2c.png)
 
+### 4b. Connect the sensor to the RaspberryPi's corresponding pins as shown below:
+![wiring](https://github.com/DecentLabs/officeAir/blob/master/example/6_sensor_wiring1.png)
+![wiring](https://github.com/DecentLabs/officeAir/blob/master/example/6_sensor_wiring2.png)
+![wiring](https://github.com/DecentLabs/officeAir/blob/master/example/6_sensor_wiring3.png)
+
 ### 5. `sudo apt install i2c-tools`
 
 ## veryfication of I2C sensor:
