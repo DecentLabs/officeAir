@@ -29,7 +29,7 @@ After the google sheet configuration now see what configuration we need to do un
 
 ## 4. enable I2C interface at Raspberry Pi
  
-       `sudo raspi-config`
+       sudo raspi-config
 
 ![raspi-config](https://github.com/DecentLabs/officeAir/blob/master/example/1_raspi-config_intef_options.png)
 
@@ -43,10 +43,10 @@ After the google sheet configuration now see what configuration we need to do un
 ![wiring](https://github.com/DecentLabs/officeAir/blob/master/example/6_sensor_wiring3.png)
 
 ### 5. install i2c-tools to be able to reach the sensor and check its status
-       `sudo apt install i2c-tools`
+       sudo apt install i2c-tools
 
 ### 6. veryfication of I2C sensor:
-       `sudo i2cdump -y 1 64`
+       sudo i2cdump -y 1 64
        
 #should look like somthing like this:
 ![I2C map](https://github.com/DecentLabs/officeAir/blob/master/example/4_i2cdump_map.png)
