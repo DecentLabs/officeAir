@@ -18,7 +18,7 @@ Let's see how to configure RPi and google sheet scripts and web app deploy to en
 ![web app deploy](https://github.com/DecentLabs/officeAir/blob/master/example/5_balcony_temp_hum_chart_2c.png)
 
 3. copy paste that link (the most important thinkg) which needs to be paste in the future steps into the Rapsberry Pi code. This key makes a "link" between the RPi and the Google web app server, thus the data will be uploded into the right place: your google sheet.
-![web app key, copy that](https://github.com/DecentLabs/officeAir/blob/master/example/5_balcony_temp_hum_chart_2d.png)
+![web app key, copy that](https://github.com/DecentLabs/officeAir/blob/master/example/5balcony_temp_hum_chart_2d.png)
 
 ## enabling I2C interface at Raspberry Pi
 1. `sudo raspi-config`
