@@ -47,10 +47,10 @@ After the google sheet configuration now see what configuration we need to do un
 ### 7. creating log script to execute I2C sensor call and google web app data upload:
     sudo nano log
     
-### 8. copy paste this into log, take care to modify the _web app key_ to your deployed one
+### 8. copy paste this into log, take care to modify the _web app key_ what you copied at setp 3 above
     #/bins/sh
     DATA=`sht21.py`
-    curl -L "https://script.google.com/macros/s/>>copy your Google script deployed web app key here<</exec?$DATA"
+    curl -L "https://script.google.com/macros/s/**copy your Google script deployed web app key here**/exec?$DATA"
 
 ### 9. set rights
     sudo chmod +x log
