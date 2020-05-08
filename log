@@ -1,7 +1,5 @@
 #/bins/sh
 DATA=`sht21.py`
-#curl -L "https://script.google.com/macros/s/AKfycbzp9WvNEm1Z8z27zuG7jsfV5k0zalB1GG2U5TqEzOjsyVXon9AH/exec?$DATA"
-#curl -L "https://script.google.com/macros/s/AKfycbys5ImU8K31am25rmlpvZcBOhElHDTVDrl1uTlE/exec?$DATA"
 
-curl -L "https://script.google.com/macros/s/AKfycbw9b0uLR73QUqbkOF995aebiHR-mcapLt1ej4VSSg/exec?$DATA"
+curl -L "https://script.google.com/macros/s/__your google web app key comes here__/exec?$DATA"
 
