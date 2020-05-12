@@ -23,7 +23,7 @@ Let's see how to configure RPi and google sheet scripts and web app deploy to en
 ### 1. go to the "script" menu to open the google sheet corresponding and pre-programmed small script:
 ![script menu](https://github.com/DecentLabs/officeAir/blob/master/example/5_balcony_temp_hum_chart_2b.png)
 
-![or you can download the script code file too from the repo here](https://github.com/DecentLabs/officeAir/blob/master/code.gs)
+[or you can download the script code file too from the repo here](https://github.com/DecentLabs/officeAir/blob/master/code.gs)
 
 ### 2. select publish->deploy as web app from the menu there:
 ![web app deploy](https://github.com/DecentLabs/officeAir/blob/master/example/5_balcony_temp_hum_chart_2c.png)
