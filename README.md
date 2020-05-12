@@ -7,7 +7,7 @@ Code by: [Róbert Szalóki](https://github.com/rszaloki), Hardware configuration
 First lets see the Google sheet and its script side to prepare that before Raspberry pi configurations.
 
 ### You can take this example Google sheet (make a copy to yourself and format for your needs):
-[example google sheet](https://docs.google.com/spreadsheets/d/1NwUGx-ZrcANtIkeNKTUgpd7Sba6uL-PD1U4rKH_r9Pc/edit?usp=sharing)
+[example google sheet](https://docs.google.com/spreadsheets/d/1t9r_rUyFjBkhwC56gJk5tmbUgx4k2Acqq_upUnAoVYM/edit?usp=sharing)
 
 Here is a chart for temperature and humidity for several days:
 
