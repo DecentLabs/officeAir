@@ -71,7 +71,7 @@ After the google sheet configuration now see what configuration we need to do un
     
 ### 10. copy the python script into the proper folder:
     cd /usr/local/bin/log
-    sudo wget https://github.com/DecentLabs/officeAir/blob/master/sht21.py
+    sudo wget https://raw.githubusercontent.com/DecentLabs/officeAir/master/sht21.py
     sudo chmod +x sht21.py
 ### 11. modifying crontab to execute the script every minuite
     sudo nano /etc/crontab
