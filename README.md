@@ -49,43 +49,43 @@ After the google sheet configuration now see what configuration we need to do un
 ![wiring](https://github.com/DecentLabs/officeAir/blob/master/example/6_sensor_wiring3.png)
 
 ### 5. update + upgrade and install i2c-tools to be able to reach the sensor and check its status
-     	sudo apt update
-      	sudo apt upgrade
-      	sudo apt install i2c-tools
+	sudo apt update
+	sudo apt upgrade
+	sudo apt install i2c-tools
 
 ### 6. veryfication of I2C sensor:
-      	sudo i2cdump -y 1 64
-       
+	sudo i2cdump -y 1 64
+ 
 #should look like somthing like this:
 ![I2C map](https://github.com/DecentLabs/officeAir/blob/master/example/4_i2cdump_map.png)
 
 
 ### 7. creating log script to execute I2C sensor call and google web app data upload:
-    	sudo mkdir /usr/local/bin/log
+	sudo mkdir /usr/local/bin/log
 	sudo cd /usr/local/bin/log
 	sudo nano log
     
 ### 8. copy paste this into log, take care to modify the _web app key_ what you copied at setp 3 above
-    	#/bins/sh
-    	DATA=`sht21.py`
-    	curl -L "https://script.google.com/macros/s/**copy your Google script deployed web app key here**/exec?$DATA"
+	#/bins/sh
+	DATA=`sht21.py`
+	curl -L "https://script.google.com/macros/s/**copy your Google script deployed web app key here**/exec?$DATA"
 
 ### 9. set rights
-    	sudo chmod +x log
+	sudo chmod +x log
     
 ### 10. copy the python script into the proper folder:
-    	cd /usr/local/bin/log
-    	sudo wget https://raw.githubusercontent.com/DecentLabs/officeAir/master/sht21.py
-    	sudo chmod +x sht21.py
+	cd /usr/local/bin/log
+	sudo wget https://raw.githubusercontent.com/DecentLabs/officeAir/master/sht21.py
+	sudo chmod +x sht21.py
 ### 11. modifying crontab to execute the script every minuite
-    	sudo nano /etc/crontab
+	sudo nano /etc/crontab
 
 ### 11b. and copy paste to the last line this:
 
-    	*  *    * * *   root  /usr/local/bin/log #log air quality
+	*  *    * * *   root  /usr/local/bin/log #log air quality
     
 ### Finally reboot the RPi, once it comes back it should report temperature and humidity values every minute to the google sheet
-    	sudo reboot
+	sudo reboot
     
 
 
