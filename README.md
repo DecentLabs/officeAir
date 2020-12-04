@@ -83,7 +83,7 @@ After the google sheet configuration now see what configuration we need to do un
 
 ### 11b. and copy paste to the last line this:
 
-	*  *    * * *   root  /usr/local/bin/log #log air quality
+	*  *    * * *   root  /usr/local/bin/log/log #log air quality
     
 ### Finally reboot the RPi, once it comes back it should report temperature and humidity values every minute to the google sheet
 	sudo reboot
