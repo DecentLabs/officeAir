@@ -9,7 +9,7 @@ First lets see the Google sheet and its script side to prepare that before Raspb
 ### You can take this example Google sheet (make a copy to yourself and format for your needs):
 [example google sheet](https://docs.google.com/spreadsheets/d/1t9r_rUyFjBkhwC56gJk5tmbUgx4k2Acqq_upUnAoVYM/edit?usp=sharing)
 
-Here is a chart for temperature and humidity for several days:
+Here are two charts for temperature and humidity for several days:
 
 ![example chart](https://github.com/DecentLabs/officeAir/blob/master/example/5_balcony_temp_hum_chart.png)
 ![example chart2](https://github.com/DecentLabs/officeAir/blob/master/example/7_new_office_example.png)
