@@ -48,7 +48,9 @@ After the google sheet configuration now see what configuration we need to do un
 ![wiring](https://github.com/DecentLabs/officeAir/blob/master/example/6_sensor_wiring2.png)
 ![wiring](https://github.com/DecentLabs/officeAir/blob/master/example/6_sensor_wiring3.png)
 
-### 5. install i2c-tools to be able to reach the sensor and check its status
+### 5. update + upgrade and install i2c-tools to be able to reach the sensor and check its status
+       sudo apt update
+       sudo apt upgrade
        sudo apt install i2c-tools
 
 ### 6. veryfication of I2C sensor:
@@ -59,7 +61,9 @@ After the google sheet configuration now see what configuration we need to do un
 
 
 ### 7. creating log script to execute I2C sensor call and google web app data upload:
-    sudo nano log
+    	sudo mkdir /usr/local/bin/log
+	sudo cd /usr/local/bin/log
+	sudo nano log
     
 ### 8. copy paste this into log, take care to modify the _web app key_ what you copied at setp 3 above
     #/bins/sh
