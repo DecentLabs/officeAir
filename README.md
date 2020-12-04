@@ -12,6 +12,7 @@ First lets see the Google sheet and its script side to prepare that before Raspb
 Here is a chart for temperature and humidity for several days:
 
 ![example chart](https://github.com/DecentLabs/officeAir/blob/master/example/5_balcony_temp_hum_chart.png)
+![example chart2](https://github.com/DecentLabs/officeAir/blob/master/example/7_new_office_example.png)
 
 And this is how the raw data looks like:
 
