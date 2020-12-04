@@ -62,7 +62,7 @@ After the google sheet configuration now see what configuration we need to do un
 
 ### 7. creating log script to execute I2C sensor call and google web app data upload:
 	sudo mkdir /usr/local/bin/log
-	sudo cd /usr/local/bin/log
+	cd /usr/local/bin/log
 	sudo nano log
     
 ### 8. copy paste this into log, take care to modify the _web app key_ what you copied at setp 3 above
@@ -74,7 +74,7 @@ After the google sheet configuration now see what configuration we need to do un
 	sudo chmod +x log
     
 ### 10. copy the python script into the proper folder:
-	cd /usr/local/bin/log
+	cd /usr/local/bin/
 	sudo wget https://raw.githubusercontent.com/DecentLabs/officeAir/master/sht21.py
 	sudo chmod +x sht21.py
 ### 11. modifying crontab to execute the script every minuite
