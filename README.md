@@ -89,7 +89,7 @@ After the google sheet configuration now see what configuration we need to do un
 	sudo reboot
 	
 
-## 🚀 ESP32 Port (`esp32_version/`)
+## 🚀 ESP32 Port (`esp32_version/`) added on 02/07/2026
 
 ![ESP32 pcb](https://github.com/DecentLabs/officeAir/blob/master/example/8_office_air%20esp32.jpg)
 
