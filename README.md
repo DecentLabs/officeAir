@@ -93,6 +93,10 @@ After the google sheet configuration now see what configuration we need to do un
 
 ![ESP32 pcb](https://github.com/DecentLabs/officeAir/blob/master/example/8_office_air%20esp32.jpg)
 
+![ESP32 current chart](https://github.com/DecentLabs/officeAir/blob/master/example/9_office_air%20esp32_current_consumption_chart_on_Otii_Arc.jpg)
+
+[![Youtube Video](https://github.com/DecentLabs/officeAir/blob/master/example/11_esp32_current_youtube.png)](https://www.youtube.com/watch?v=iRE4Ly5Vs14&t)
+
 This subdirectory contains a complete **C++ (Arduino framework)** port of the original Raspberry Pi Python project. It migrates the climate logging system to an **ESP32** microcontroller (specifically optimized for the **Heltec WiFi LoRa 32 V3** board), maintaining 100% backward compatibility with the existing Google Apps Script and Google Sheets backend.
 
 ### 🔄 What Changed? (Raspberry Pi vs. ESP32)
