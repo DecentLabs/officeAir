@@ -47,6 +47,13 @@ const String googleScriptUrl = "https://script.google.com/macros/s/YOUR_DEPLOYME
 #define MY_SCL 42
 #define Vext 36
 
+// PRIVACY SWITCH
+// When true (default), MAC addresses on the UART log are masked to
+// "AA:BB:CC:XX:XX:XX" - the vendor OUI stays visible (useful for debugging),
+// but the device-specific half is hidden. Recommended for screen recordings,
+// demos and published logs. Set to false for full addresses while debugging.
+const bool ANONYMIZE_MACS = true;
+
 // Battery voltage measurement (Heltec V3 onboard voltage divider)
 #define ADC_CTRL 37         // divider enable pin
 #define VBAT_PIN 1          // ADC input for the divided cell voltage
@@ -345,6 +352,20 @@ void ledTask(void *param) {
 // ==========================================
 // 🔎 ARP TABLE HARVESTER (thread-safe)
 // ==========================================
+
+// Formats a MAC address for logging, honoring the ANONYMIZE_MACS switch.
+// Anonymized form keeps the OUI (vendor half) and masks the device half.
+void formatMac(const struct eth_addr *ethaddr, char *out, size_t outLen) {
+  if (ANONYMIZE_MACS) {
+    snprintf(out, outLen, "%02X:%02X:%02X:XX:XX:XX",
+             ethaddr->addr[0], ethaddr->addr[1], ethaddr->addr[2]);
+  } else {
+    snprintf(out, outLen, "%02X:%02X:%02X:%02X:%02X:%02X",
+             ethaddr->addr[0], ethaddr->addr[1], ethaddr->addr[2],
+             ethaddr->addr[3], ethaddr->addr[4], ethaddr->addr[5]);
+  }
+}
+
 void harvestArpTable(std::vector<uint32_t>& discoveredIPs, const char* label) {
   LOCK_TCPIP_CORE();
   for (int j = 0; j < ARP_TABLE_SIZE; j++) {
@@ -362,10 +383,10 @@ void harvestArpTable(std::vector<uint32_t>& discoveredIPs, const char* label) {
 
       if (!alreadySaved) {
         discoveredIPs.push_back(rawIP);
-        Serial.printf("    [+ %s] IP: %s | MAC: %02X:%02X:%02X:%02X:%02X:%02X\n",
-                      label, ip4addr_ntoa(ipaddr),
-                      ethaddr->addr[0], ethaddr->addr[1], ethaddr->addr[2],
-                      ethaddr->addr[3], ethaddr->addr[4], ethaddr->addr[5]);
+        char macStr[18];
+        formatMac(ethaddr, macStr, sizeof(macStr));
+        Serial.printf("    [+ %s] IP: %s | MAC: %s\n",
+                      label, ip4addr_ntoa(ipaddr), macStr);
       }
     }
   }
