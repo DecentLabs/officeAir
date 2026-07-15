@@ -4,10 +4,60 @@ This project lets you log temperature and humidity data via Raspberry Pi and a s
 
 Code by: [Róbert Szalóki](https://github.com/rszaloki), Hardware configuration and manual by: [Zoltan Dóczi (RFsparkling)](http://rfsparkling.com), Licensed by [DecentLabs](https://decent.org/) 
 
-First lets see the Google sheet and its script side to prepare that before Raspberry pi configurations.
+First lets see the Google sheet and its script side to prepare that before ESP32 or Raspberry pi configurations.
+
+![Example ESP32 google sheet with required scripts](https://docs.google.com/spreadsheets/u/1/d/1cFYKWmYqLdmBjP9kKl1BjMEiIiHa2lmY5L9W9_Fk8bM/copy)
+
+## 🚀 ESP32 Port (`esp32_version/`) added on 02/07/2026
+
+![ESP32 pcb](https://github.com/DecentLabs/officeAir/blob/master/example/8_office_air%20esp32.jpg)
+
+[![YouTube Video GMutHe-9XjI](https://utfs.io/f/nGnSqDveMsqxOoMkS70k5fKEn2LbBoPAuZ6XMTHDcNJ0QiG1)](https://www.youtube.com/watch?v=GMutHe-9XjI)
+
+![ESP32 current chart](https://github.com/DecentLabs/officeAir/blob/master/example/9_office_air%20esp32_current_consumption_chart_on_Otii_Arc.jpg)
+
+[![Youtube Video](https://github.com/DecentLabs/officeAir/blob/master/example/11_esp32_current_youtube.png)](https://www.youtube.com/watch?v=iRE4Ly5Vs14&t)
+
+This subdirectory contains a complete **C++ (Arduino framework)** port of the original Raspberry Pi Python project. It migrates the climate logging system to an **ESP32** microcontroller (specifically optimized for the **Heltec WiFi LoRa 32 V3** board), maintaining 100% backward compatibility with the existing Google Apps Script and Google Sheets backend.
+
+### 🔄 What Changed? (Raspberry Pi vs. ESP32)
+
+| Feature | Original Version (Raspberry Pi) | Upgraded Version (ESP32) |
+| :--- | :--- | :--- |
+| **Hardware** | Raspberry Pi (Single Board Computer) | ESP32-S3 (Heltec WiFi LoRa 32 V3) |
+| **Language** | Python (`sht21.py`) + Bash script | C++ (Arduino / PlatformIO) |
+| **Power Consumption** | High (~2W to 5W), always-on | **Ultra-low (Micro-amps)** via Deep Sleep |
+| **I2C Protocol** | Linux `/dev/i2c-1` system calls | Hardware I2C via Wire library |
+| **HTTP Requests** | Native `curl -L` CLI command | `HTTPClient` with strict redirect following |
+| **Form Factor** | Large, requires robust 5V power supply | Compact, battery/solar friendly, runs on Micro-USB/Type-C |
+
+### 🛠️ Technical Improvements
+
+1. **Power Management & Deep Sleep:**
+   Unlike the Raspberry Pi which must run 24/7, the ESP32 wakes up, connects to Wi-Fi, reads the sensor, pushes the data to Google Sheets, and immediately enters **Deep Sleep for 10 minutes**. 
+   Additionally, it utilizes the Heltec V3's onboard **`Vext` power switch (GPIO 36)** to completely cut off power to the external I2C sensor rail during sleep, minimizing standby current draw.
+
+2. **Custom I2C Pinout:**
+   The SHT21 sensor has been mapped to custom I2C pins appropriate for clean prototyping on the Heltec V3 board:
+   * **SDA:** GPIO 41
+   * **SCL:** GPIO 42
+
+3. **Google Web App Redirection Handling:**
+   Google Apps Script URLs automatically trigger a **HTTP 302 Redirect**. The ESP32 code is explicitly configured with `http.setFollowRedirects(HTTPC_STRICT_FOLLOW_REDIRECTS);` to natively handle this behavior, ensuring successful payload delivery (returning `HTTP 200 Ok`).
+
+4. **LAN device scanning for presence detection**
+---
+
+### 📂 Directory Structure
+
+```text
+esp32_version/
+├── platformio.ini   # Project configuration, dependencies, and board definitions
+└── src/
+    └── main.cpp     # Main C++ source code (Wi-Fi, SHT21 driver, HTTP client, Deep Sleep)
 
 ### You can take this example Google sheet (make a copy to yourself and format for your needs):
-[example google sheet](https://docs.google.com/spreadsheets/d/1t9r_rUyFjBkhwC56gJk5tmbUgx4k2Acqq_upUnAoVYM/edit?usp=sharing)
+[example google RPi sheet](https://docs.google.com/spreadsheets/d/1t9r_rUyFjBkhwC56gJk5tmbUgx4k2Acqq_upUnAoVYM/edit?usp=sharing)
 
 Here are two charts for temperature and humidity for several days:
 
@@ -89,50 +139,7 @@ After the google sheet configuration now see what configuration we need to do un
 	sudo reboot
 	
 
-## 🚀 ESP32 Port (`esp32_version/`) added on 02/07/2026
 
-![ESP32 pcb](https://github.com/DecentLabs/officeAir/blob/master/example/8_office_air%20esp32.jpg)
-
-![ESP32 current chart](https://github.com/DecentLabs/officeAir/blob/master/example/9_office_air%20esp32_current_consumption_chart_on_Otii_Arc.jpg)
-
-[![Youtube Video](https://github.com/DecentLabs/officeAir/blob/master/example/11_esp32_current_youtube.png)](https://www.youtube.com/watch?v=iRE4Ly5Vs14&t)
-
-This subdirectory contains a complete **C++ (Arduino framework)** port of the original Raspberry Pi Python project. It migrates the climate logging system to an **ESP32** microcontroller (specifically optimized for the **Heltec WiFi LoRa 32 V3** board), maintaining 100% backward compatibility with the existing Google Apps Script and Google Sheets backend.
-
-### 🔄 What Changed? (Raspberry Pi vs. ESP32)
-
-| Feature | Original Version (Raspberry Pi) | Upgraded Version (ESP32) |
-| :--- | :--- | :--- |
-| **Hardware** | Raspberry Pi (Single Board Computer) | ESP32-S3 (Heltec WiFi LoRa 32 V3) |
-| **Language** | Python (`sht21.py`) + Bash script | C++ (Arduino / PlatformIO) |
-| **Power Consumption** | High (~2W to 5W), always-on | **Ultra-low (Micro-amps)** via Deep Sleep |
-| **I2C Protocol** | Linux `/dev/i2c-1` system calls | Hardware I2C via Wire library |
-| **HTTP Requests** | Native `curl -L` CLI command | `HTTPClient` with strict redirect following |
-| **Form Factor** | Large, requires robust 5V power supply | Compact, battery/solar friendly, runs on Micro-USB/Type-C |
-
-### 🛠️ Technical Improvements
-
-1. **Power Management & Deep Sleep:**
-   Unlike the Raspberry Pi which must run 24/7, the ESP32 wakes up, connects to Wi-Fi, reads the sensor, pushes the data to Google Sheets, and immediately enters **Deep Sleep for 10 minutes**. 
-   Additionally, it utilizes the Heltec V3's onboard **`Vext` power switch (GPIO 36)** to completely cut off power to the external I2C sensor rail during sleep, minimizing standby current draw.
-
-2. **Custom I2C Pinout:**
-   The SHT21 sensor has been mapped to custom I2C pins appropriate for clean prototyping on the Heltec V3 board:
-   * **SDA:** GPIO 41
-   * **SCL:** GPIO 42
-
-3. **Google Web App Redirection Handling:**
-   Google Apps Script URLs automatically trigger a **HTTP 302 Redirect**. The ESP32 code is explicitly configured with `http.setFollowRedirects(HTTPC_STRICT_FOLLOW_REDIRECTS);` to natively handle this behavior, ensuring successful payload delivery (returning `HTTP 200 Ok`).
-
----
-
-### 📂 Directory Structure
-
-```text
-esp32_version/
-├── platformio.ini   # Project configuration, dependencies, and board definitions
-└── src/
-    └── main.cpp     # Main C++ source code (Wi-Fi, SHT21 driver, HTTP client, Deep Sleep)
     
 
 
