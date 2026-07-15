@@ -50,7 +50,7 @@ This subdirectory contains a complete **C++ (Arduino framework)** port of the or
 
 ### 📂 Directory Structure
 
-```text
+
 esp32_version/
 ├── platformio.ini   # Project configuration, dependencies, and board definitions
 └── src/
