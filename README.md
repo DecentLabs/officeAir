@@ -10,6 +10,7 @@ Code by: [Róbert Szalóki](https://github.com/rszaloki), Hardware configuration
 
 [![YouTube Video GMutHe-9XjI](https://utfs.io/f/nGnSqDveMsqxOoMkS70k5fKEn2LbBoPAuZ6XMTHDcNJ0QiG1)](https://www.youtube.com/watch?v=GMutHe-9XjI)
 
+Phyisiologycal hearth beat activity, mimicing humany boday with artifical HRV and randomness, also CPU load dependent BPM
 [![YouTube Video B6L4vFoD-HM](https://img.youtube.com/vi/B6L4vFoD-HM/maxresdefault.jpg)](https://www.youtube.com/watch?v=B6L4vFoD-HM)
 
 <img width="2535" height="1140" alt="image" src="https://github.com/user-attachments/assets/bc42e7f4-98bf-45c6-b327-662bd091cae3" />
