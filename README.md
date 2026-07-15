@@ -10,6 +10,12 @@ Code by: [Róbert Szalóki](https://github.com/rszaloki), Hardware configuration
 
 [![YouTube Video GMutHe-9XjI](https://utfs.io/f/nGnSqDveMsqxOoMkS70k5fKEn2LbBoPAuZ6XMTHDcNJ0QiG1)](https://www.youtube.com/watch?v=GMutHe-9XjI)
 
+<img width="2535" height="1140" alt="image" src="https://github.com/user-attachments/assets/bc42e7f4-98bf-45c6-b327-662bd091cae3" />
+<img width="989" height="349" alt="image" src="https://github.com/user-attachments/assets/49e78d07-e276-447e-9c72-0622df6f3a21" />,
+<img width="2154" height="1252" alt="image" src="https://github.com/user-attachments/assets/045fe3e2-a1eb-4aa4-a985-c0a9d72735b1" />
+
+
+
 ---
 
 ## ✨ Features
